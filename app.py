@@ -1,5 +1,13 @@
-import os
 import streamlit as st
+
+# Streamlit設定（最初に実行する必要がある）
+st.set_page_config(
+    page_title="専門家LLMアプリ", 
+    page_icon="🧠",
+    layout="wide"
+)
+
+import os
 import datetime
 
 # 基本テスト用の簡素なバージョン
@@ -32,17 +40,6 @@ except ImportError as e:
     st.error(f"❌ langchainのインポートエラー: {e}")
 
 st.success("アプリの基本構造は正常に動作しています！")
-
-# Streamlit設定（最初に実行する必要がある）
-st.set_page_config(
-    page_title="専門家LLMアプリ", 
-    page_icon="🧠",
-    layout="wide"
-)
-
-# 環境変数読み込み（.envファイルから）
-load_dotenv()
-api_key = os.getenv("OPENAI_API_KEY")
 
 # デバッグ情報をより詳細に表示
 st.sidebar.write("🔧 デバッグ情報")
